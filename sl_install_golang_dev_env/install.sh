@@ -8,10 +8,11 @@ yum install iftop -y
 yum install tcpdump -y
 yum install samba -y
 yum install gcc -y
-yum install openssl-devel glibc-static libstdc++-static lm_sensors-devel -y
-tar -zxf go1.11.4.linux-amd64.tar.gz -C /usr/local/
+yum install openssl-devel glibc-static libstdc++-static -y
+curl -O https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
+tar -zxf go1.13.4.linux-amd64.tar.gz -C /usr/local/
 
-user='slk'
+user='rick'
 
 mkdir -p /home/$user/workspace/go/src
 mkdir  /home/$user/workspace/go/bin

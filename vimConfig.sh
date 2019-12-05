@@ -1,5 +1,5 @@
 #!/bin/bash
-user='slk'
+user='rick'
 
 git clone https://gitee.com/linkangsun/vim.git /usr/local/src/vim
 yum install -y ncurses-devel 
