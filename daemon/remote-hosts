@@ -1,0 +1,6 @@
+manager0:192.168.10.146:22:cs!funnel[dev]
+worker0:192.168.10.147:22:cs!funnel[dev]
+worker1:192.168.10.148:22:cs!funnel[dev]
+worker2:192.168.10.149:22:cs!funnel[dev]
+log0:192.168.10.150:22:cs!funnel[dev]
+game0:192.168.10.152:22:cs!funnel[dev]

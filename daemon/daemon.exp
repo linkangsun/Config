@@ -1,0 +1,24 @@
+#!/bin/expect
+
+set host [lindex $argv 0]
+set port [lindex $argv 1]
+set password [lindex $argv 2]
+
+set timeout 5 
+spawn scp -P $port ./daemon.json root@$host:/etc/docker/
+expect {
+	  "*fingerprint])?" {send "yes\r"; exp_continue}
+	    "*assword" {send "$password\r"}
+}
+expect 100%
+sleep 3 
+
+spawn ssh -p $port root@$host
+expect {
+	  "*fingerprint])?" {send "yes\r"; exp_continue}
+	    "*assword" {send "$password\r"}
+}
+expect "*]#" {send "systemctl daemon-reload && systemctl restart docker\r"}
+send "exit\r"
+
+interact
